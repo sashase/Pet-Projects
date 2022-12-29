@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
     <title>News Homepage</title>
 </head>
 <body>
-    <nav>
+    <nav class="navbar-desktop">
         <img class="logo" src="img/logo.svg" alt="logo">
         <div class="header-links">
             <a href="#">Home</a>
@@ -21,6 +22,35 @@
             <a href="#">Popular</a>
             <a href="#">Trending</a> 
             <a href="#">Categories</a> 
+        </div>
+    </nav>
+    <nav class="navbar navbar-mobile">
+        <div class="container-fluid">
+            <img class="logo" src="img/logo.svg" alt="logo">
+                <img src="img/icon-menu.svg" alt="icon-menu"  data-bs-toggle="offcanvas" data-bs-target="#mobileNavbar" aria-controls="mobileNavbar">
+            <div class="navbar-mobile-expanded offcanvas offcanvas-end" tabindex="-1" id="mobileNavbar" aria-labelledby="mobileNavbarLabel">
+                <div class="offcanvas-header navbar-mobile-header">
+                    <img src="img/icon-menu-close.svg" alt="icon-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                </div>
+                <div class="navbar-mobile-body offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item-mobile">
+                            <a class="nav-link-mobile" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item-mobile">
+                            <a class="nav-link-mobile" aria-current="page" href="#">New</a>
+                        </li>
+                        <li class="nav-item-mobile">
+                            <a class="nav-link-mobile" aria-current="page" href="#">Popular</a>
+                        </li>
+                        <li class="nav-item-mobile">
+                            <a class="nav-link-mobile" aria-current="page" href="#">Trending</a>
+                        </li>
+                        <li class="nav-item-mobile">
+                            <a class="nav-link-mobile" aria-current="page" href="#">Categories</a>
+                        </li>
+                </div>
+            </div>
         </div>
     </nav>
     <section>
@@ -65,10 +95,10 @@
         <div class="bottom-row row">
             <article class="bottom-article col-lg-4 col-sm-12">
                 <div class="row">
-                    <div class="bottom-article-image-container col-lg-3">
+                    <div class="col-3 bottom-article-image-container">
                         <img class="bottom-article-image" src="img/image-retro-pcs.jpg" alt="retro-pcs">
                     </div>
-                    <div class="col-lg-9 bottom-article-content-container">
+                    <div class="col-9 bottom-article-content-container">
                         <h2 class="bottom-article-number">01</h2>
                         <a class="bottom-article-title" href="#">Reviving Retro PCs</a>
                         <p class="bottom-article-content">What happens when old PCs are given modern upgrades?</p>
@@ -77,22 +107,22 @@
             </article>
             <article class="bottom-article col-lg-4 col-sm-12">
                 <div class="row">
-                    <div class="bottom-article-image-container col-lg-3">
+                    <div class="col-3 bottom-article-image-container">
                         <img class="bottom-article-image" src="img/image-top-laptops.jpg" alt="top-laptops">
                     </div>
-                    <div class="col-lg-9 bottom-article-content-container">
+                    <div class="col-9 bottom-article-content-container">
                         <h2 class="bottom-article-number">02</h2>
-                        <a class="bottom-article-title" href="#">Top 10 Laptops of 2022</a>
+                        <a class="bottom-article-title bottom-article-title-mid" href="#">Top 10 Laptops of 2022</a>
                         <p class="bottom-article-content">Our best picks for various needs and budgets.</p>
                     </div>
                 </div>
             </article>
             <article class="bottom-article col-lg-4 col-sm-12">
                 <div class="row">
-                    <div class="bottom-article-image-container col-lg-3">
+                    <div class="col-3 bottom-article-image-container">
                         <img class="bottom-article-image" src="img/image-gaming-growth.jpg" alt="gaming-growth">
                     </div>
-                    <div class="col-lg-9 bottom-article-content-container bottom-article-content-container-right">
+                    <div class="col-9 bottom-article-content-container bottom-article-content-container-right">
                         <h2 class="bottom-article-number">03</h2>
                         <a class="bottom-article-title" href="#">The Growth of Gaming</a>
                         <p class="bottom-article-content">How the pandemic has sparked fresh opportunities.</p>
