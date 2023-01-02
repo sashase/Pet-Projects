@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Link from "next/link"
 import { db } from "../utils/firebase"
 import { useEffect, useState } from "react"
 import Message from "../components/Message"
@@ -30,7 +31,13 @@ export default function Home() {
       </Head>
       <div className="my-6">
         {allPosts.map((post) => (
-          <Message {...post} key={post.id}></Message>
+          <div key={post.id}>
+            <Message {...post}>
+              <Link href={{ pathname: `/${post.id}`, query: { ...post } }} key={"sas"}>
+                <button>Comments</button>
+              </Link>
+            </Message>
+          </div>
         ))}
       </div>
     </div>
