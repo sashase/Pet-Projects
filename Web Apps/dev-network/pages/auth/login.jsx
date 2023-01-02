@@ -26,12 +26,12 @@ export default function Login() {
     <div className="bg-light shadow-xl rounded-lg mt-32 p-10">
       <h2 className="text-darker text-center font-medium text-2xl">Sign In!</h2>
       <div className="py-5">
-        <h3 className="text-darker text-center font-medium text-lg pb-4">
+        <h3 className="text-darker text-center font-medium text-lg">
           Sign in with providers below
         </h3>
         <button
           onClick={googleLogin}
-          className="text-light font-medium flex align-middle w-full bg-darker rounded-lg py-2 px-4 gap-3 hover:bg-light hover:text-darker"
+          className="text-light font-medium flex align-middle w-full bg-darker rounded-lg py-2 px-4 mt-5 gap-3 hover:bg-light hover:text-darker"
         >
           <BsGoogle className="text-2xl" /> Sign in with Google
         </button>

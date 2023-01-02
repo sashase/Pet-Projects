@@ -1,19 +1,19 @@
 import Head from "next/head"
 import { db } from "../utils/firebase"
-import { cloneElement, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Message from "../components/Message"
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore"
 
 export default function Home() {
   const [allPosts, setAllPosts] = useState([])
 
-  const getPosts = async () => {
+  const getPosts = () => {
     const collectionRef = collection(db, "posts")
     const q = query(collectionRef, orderBy("timestamp", "desc"))
-    const posts = await onSnapshot(q, (snapshot) => {
+    const unsubscribe = onSnapshot(q, (snapshot) => {
       setAllPosts(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     })
-    return posts
+    return unsubscribe
   }
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className="my-6">
         {allPosts.map((post) => (
           <Message {...post} key={post.id}></Message>
         ))}

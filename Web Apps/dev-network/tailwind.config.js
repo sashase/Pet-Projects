@@ -10,10 +10,10 @@ module.exports = {
         poppins: "Poppins"
       },
       colors: {
-        lighter: "#CFF5E7",
-        light: "#A0E4CB",
-        dark: "#59C1BD",
-        darker: "#0D4C92"
+        lighter: "#F9F7F7",
+        light: "#DBE2EF",
+        dark: "#3F72AF",
+        darker: "#112D4E"
       }
     }
   },
