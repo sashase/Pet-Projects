@@ -22,8 +22,6 @@ export default function Post() {
     autoClose: 2000,
   }
 
-  // if ()
-
   const createPost = async () => {
     if (!post.title && !post.content) {
       toast.error("Your title and content are empty!", toastProps)
@@ -50,6 +48,7 @@ export default function Post() {
         uid: user.uid,
         username: user.displayName,
         avatar: user.photoURL,
+        likedBy: [],
         timestamp: serverTimestamp(),
       })
       setPost({ title: "", content: "" })

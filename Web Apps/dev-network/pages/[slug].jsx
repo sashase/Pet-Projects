@@ -22,7 +22,7 @@ export default function Comments() {
   const getComments = async () => {
     const docRef = doc(db, "posts", routeData.id)
     const unsubscribe = onSnapshot(docRef, (snapshot) => {
-      setAllComments(snapshot.data().comments)
+      setAllComments(snapshot.data()?.comments)
     })
     return unsubscribe
   }

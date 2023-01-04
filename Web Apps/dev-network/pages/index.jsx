@@ -4,6 +4,7 @@ import { db } from "../utils/firebase"
 import { useEffect, useState } from "react"
 import Message from "../components/Message"
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore"
+import Like from "../components/Like"
 
 export default function Home() {
   const [allPosts, setAllPosts] = useState([])
@@ -33,8 +34,14 @@ export default function Home() {
         {allPosts.map((post) => (
           <div key={post.id}>
             <Message {...post}>
-              <Link href={{ pathname: `/${post.id}`, query: { ...post } }} key={"sas"}>
-                <button>Comments</button>
+              <Like post={post} />
+              <Link
+                href={{ pathname: `/${post.id}`, query: { ...post } }}
+                key={"sas"}
+              >
+                <button>
+                  {post.comments?.length ? post.comments.length : "0" } Comments
+                </button>
               </Link>
             </Message>
           </div>
