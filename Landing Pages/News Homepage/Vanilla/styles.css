@@ -40,6 +40,8 @@ hr {
     margin: 2rem 0;
 }
 
+/* NavBar */
+
 .navbar-desktop {
     margin: 4rem auto;
     clear: both;
@@ -104,6 +106,8 @@ hr {
     color: hsl(5, 85%, 63%);
 }
 
+/* Section Left Column */
+
 .left-col {
     padding-right: 2rem;
 }
@@ -147,6 +151,8 @@ article {
   background-color: hsl(240, 100%, 5%);
 }
 
+/* Section Right Column (News) */
+
 .right-col {
     background-color: hsl(240, 100%, 5%);
     padding: 2rem 1.7rem;
@@ -165,6 +171,12 @@ article {
 .right-col-link:hover {
     color:hsl(35, 77%, 62%);
 }
+
+.right-col-description {
+    color: hsl(233, 8%, 79%);
+}
+
+/* Bottom Row */
 
 .bottom-row {
     margin: 5rem 0;
@@ -215,6 +227,8 @@ article {
 .bottom-article-content {
     margin: 0.6rem 0;
 }
+
+/* Media Queries */
 
 @media (min-width: 1466px) {
     h2 {
