@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 body {
-    background-color: hsl(218, 23%, 16%);
+  background-color: hsl(218, 23%, 16%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh
 }
