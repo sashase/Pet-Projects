@@ -8,7 +8,7 @@ import {
   doc,
   onSnapshot,
   Timestamp,
-  updateDoc,
+  updateDoc
 } from "firebase/firestore"
 
 export default function Comments() {
@@ -34,8 +34,8 @@ export default function Comments() {
         avatar: user.photoURL,
         username: user.displayName,
         text: comment,
-        timestamp: Timestamp.now(),
-      }),
+        timestamp: Timestamp.now()
+      })
     })
     setComment("")
   }
@@ -61,9 +61,8 @@ export default function Comments() {
             {
               return (
                 <div
-                  className="bg-darker text-light rounded-lg my-4 p-3"
-                  key={comment.timestamp}
-                >
+                  className="bg-darker text-light rounded-lg shadow-xl my-4 p-3"
+                  key={comment.timestamp}>
                   <div className="flex items-center gap-2 mb-1">
                     <img src={comment.avatar} className="w-8 rounded-full" />
                     <h3>{comment.username}</h3>
@@ -77,14 +76,16 @@ export default function Comments() {
         {user && (
           <div className="my-5">
             <h3 className="text-darker font-medium">Send your comment</h3>
-            <div className="flex gap-3 rounded-lg my-2">
+            <div className="flex flex-col gap-3 rounded-lg my-2">
               <input
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
                 type="text"
                 className="rounded-lg border-darker border-2 text-darker p-1"
               />
-              <button onClick={createComment} className="text-darker">
+              <button
+                onClick={createComment}
+                className="text-light bg-darker rounded-lg py-2 px-4 w-[30%]">
                 Submit
               </button>
             </div>

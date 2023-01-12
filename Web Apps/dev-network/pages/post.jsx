@@ -7,7 +7,7 @@ import {
   collection,
   doc,
   serverTimestamp,
-  updateDoc,
+  updateDoc
 } from "firebase/firestore"
 import { toast } from "react-toastify"
 
@@ -19,7 +19,7 @@ export default function Post() {
   const [user, loading] = useAuthState(auth)
   const toastProps = {
     position: toast.POSITION.TOP_CENTER,
-    autoClose: 2000,
+    autoClose: 2000
   }
 
   const createPost = async () => {
@@ -49,7 +49,7 @@ export default function Post() {
         username: user.displayName,
         avatar: user.photoURL,
         likedBy: [],
-        timestamp: serverTimestamp(),
+        timestamp: serverTimestamp()
       })
       setPost({ title: "", content: "" })
       toast.success("Post has been made!", toastProps)
@@ -64,7 +64,7 @@ export default function Post() {
       setPost({
         title: routeData.title,
         content: routeData.content,
-        id: routeData.id,
+        id: routeData.id
       })
     }
   }
@@ -73,7 +73,7 @@ export default function Post() {
     checkUser()
   }, [user, loading])
   return (
-    <div className="bg-light shadow-xl rounded-lg my-28 p-10">
+    <div className="bg-light shadow-xl rounded-lg my-12 p-10">
       <h2 className="text-darker text-center font-medium text-2xl pb-4">
         {post.hasOwnProperty("id") ? "Edit your post!" : "Create a New Post!"}
       </h2>
@@ -83,22 +83,21 @@ export default function Post() {
           type="text"
           value={post.title}
           className="bg-lighter text-darker rounded-lg p-1 my-1 max-w-full"
-          onChange={(e) => setPost({ ...post, title: e.target.value })}
-        ></input>
+          onChange={(e) => setPost({ ...post, title: e.target.value })}></input>
         <h3>Content</h3>
         <textarea
           value={post.content}
           className="bg-lighter text-darker resize-none w-full h-32 rounded-lg p-1 my-1"
-          onChange={(e) => setPost({ ...post, content: e.target.value })}
-        ></textarea>
+          onChange={(e) =>
+            setPost({ ...post, content: e.target.value })
+          }></textarea>
         <p className={post.content.length > 300 ? "text-red-500" : ""}>
           {post.content.length}/300
         </p>
       </div>
       <button
         onClick={createPost}
-        className="py-2 px-4 rounded-lg font-medium bg-darker text-light text-md hover:bg-light hover:text-darker"
-      >
+        className="py-2 px-4 rounded-lg font-medium bg-darker text-light text-md hover:bg-light hover:text-darker">
         {post.hasOwnProperty("id") ? "Edit" : "Create"}
       </button>
     </div>

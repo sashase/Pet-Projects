@@ -43,7 +43,7 @@ export default function Dashboard() {
   }, [user, loading])
 
   return (
-    <div className="bg-light shadow-xl rounded-lg my-28 p-10">
+    <div className="bg-light shadow-xl rounded-lg my-12 p-10">
       <h2 className="text-darker text-center font-medium text-3xl">
         Dashboard
       </h2>
