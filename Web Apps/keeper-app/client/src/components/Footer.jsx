@@ -1,0 +1,9 @@
+const currentYear = new Date().getFullYear();
+
+const Footer = () => {
+    return (
+        <footer><p>Copyright ⓒ {currentYear}</p></footer>
+    )
+}
+
+export default Footer;

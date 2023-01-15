@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  background-color: #eee;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem 1.8rem;
+  color: white;
+  font-size: 2rem;
+  font-family: "McLaren", cursive;
+  font-weight: 400;
+}
+
+header {
+  background-color: #f5ba13;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* Input Form */
+
+form {
+  position: relative;
+  width: 80%;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+.messages-container {
+  display: flex;
+  gap: 2rem;
+  padding: 4px;
+}
+
+.error-message {
+  color: red;
+}
+
+characters-counter {
+  padding: 4px;
+}
+
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+form button:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+.red-placeholder::placeholder {
+  color: red;
+}
+
+/* Note */
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note {
+  margin: 20px 1.8rem;
+  padding: 10px 20px 10px 10px;
+  position: relative;
+  display: inline-block;
+  min-width: 2rem;
+  background-color: white;
+  box-shadow: 0 2px 5px #ccc;
+  border-radius: 0.5rem;
+}
+
+.note h2 {
+  margin: 0 0 5px;
+  line-break: anywhere;
+  font-size: 1.1rem;
+}
+
+.note p {
+  margin: 0 0 2rem 0;
+  line-break: anywhere;
+  font-size: 1.1rem;
+}
+
+.note button {
+  position: absolute;
+  border: none;
+  padding: 8px 0 0;
+  background-color: white;
+  color: #f5ba13;
+  right: 10px;
+  bottom: 10px;
+}
