@@ -14,12 +14,14 @@ module.exports = {
         purple: "#5236D2",
         whitePurple: "#F8F7FD",
         grayPurple: "#EFEEF4",
+        blackPurple: "#0D0B0F" ,
         grey: "#8F8F8F",
-        darkGray: "#303030"
+        darkGray: "#303030",
+        darkModeGray: "#1E1E1E"
       },
       boxShadow: {
         def: "0px 3px 20px rgba(0, 0, 0, 0.25)",
-        groups: "0px 3px 15px rgba(0, 0, 0, 0.1)"
+        groups: "0px 3px 15px rgba(0, 0, 0, 0.1)",
       }
     }
   },

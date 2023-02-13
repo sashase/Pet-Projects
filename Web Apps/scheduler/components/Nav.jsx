@@ -8,7 +8,7 @@ export default function Nav() {
         <Link href={"/"} className="font-pacifico text-purple text-4xl">
           Scheduler
         </Link>
-        <h2 className="text-2xl text-black">
+        <h2 className="text-2xl text-black dark:text-gray-300">
           {currentDate.weekDay.shortName}, {currentDate.day} {currentDate.month}
         </h2>
       </nav>

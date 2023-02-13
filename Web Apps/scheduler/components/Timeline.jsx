@@ -9,10 +9,10 @@ export default function Timeline(props) {
         props.currentWeekDay == currentDate.weekDay.englishName
           && "text-purple animate-pulse"
       }`}>
-      <p className="w-14">
+      <p className="text-black dark:text-gray-300 w-14">
         {timeOfLessons[props.year == "2r" ? 1 : props.year - 1][props.lessonNum].start}
         <br />
-        <span className="font-normal text-sm">
+        <span className="font-normal text-sm text-black dark:text-gray-300">
           {timeOfLessons[props.year == "2r" ? 1 : props.year - 1][props.lessonNum].end}
         </span>
       </p>
