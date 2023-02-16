@@ -1,11 +1,12 @@
 import { currentDate } from "../modules/date"
 import Link from "next/link"
+import { isFirstWeek } from "../modules/isFirstWeek"
 
 export default function GroupsList(props) {
   return (
     <div className="flex flex-col gap-3 text-center text-black dark:text-gray-300 mx-auto">
       <h2 className="text-3xl">{props.year}</h2>
-      <hr className="border-1 border-purple opacity-20"/>
+      <hr className="border-1 border-purple opacity-20" />
       {props.groups.map((group, key) => {
         return (
           <Link
@@ -15,9 +16,9 @@ export default function GroupsList(props) {
               pathname: "/schedule",
               query: {
                 year: props.yearIndex == 2 ? "2r" : props.yearIndex + 1,
-                group: props.yearIndex == 0 ? props.groups[key].query : props.groups[key].query,
+                group: props.groups[key].query,
                 weekDay: currentDate.weekDay.englishName,
-                week: props.yearIndex != 2 ? "schedule1" : "schedule2"
+                week: isFirstWeek() ? 1 : 2
               }
             }}>
             {group.name}

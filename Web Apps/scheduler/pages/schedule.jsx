@@ -23,7 +23,7 @@ export default function Schedule() {
   const { query, isReady } = useRouter()
 
   const getSchedule = async () => {
-    const docRef = doc(db, `year${query.year}`, query.week)
+    const docRef = doc(db, `year${query.year}`, `schedule${query.week}`)
     const docSnap = await getDoc(docRef)
     setCurrentSchedule(docSnap.data()[query.group])
   }

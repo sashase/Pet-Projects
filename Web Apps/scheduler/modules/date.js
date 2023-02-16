@@ -13,7 +13,8 @@ export let currentDate = {
     englishName: ""
   },
   day: new Date().getDate(),
-  month: ""
+  month: "",
+  monthNum: date.month
 }
 
 export let weekDays = [

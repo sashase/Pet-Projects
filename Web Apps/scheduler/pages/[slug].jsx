@@ -4,7 +4,7 @@ export default function Slug() {
       <h1 className="text-4xl font-bold">
         404: Not found
         <br />
-        Check you link and try again!
+        Check your link and try again!
       </h1>
     </div>
   )
