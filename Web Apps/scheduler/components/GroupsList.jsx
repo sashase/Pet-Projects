@@ -15,7 +15,12 @@ export default function GroupsList(props) {
             href={{
               pathname: "/schedule",
               query: {
-                year: props.yearIndex === 2 ? "2r" : props.yearIndex + 1,
+                year:
+                  props.yearIndex === 2
+                    ? "2r"
+                    : props.yearIndex > 2
+                    ? props.yearIndex
+                    : props.yearIndex + 1,
                 group: props.groups[key].query,
                 weekDay: currentDate.weekDay.englishName,
                 week: isFirstWeek() ? 1 : 2

@@ -88,5 +88,31 @@ export default [
       name: "КН-21",
       query: "kn21r"
     }
+  ],
+  [
+    {
+      name: "КП-31",
+      query: "kp31"
+    },
+    {
+      name: "КТ-31",
+      query: "kt31"
+    },
+    {
+      name: "КМ-31",
+      query: "km31"
+    },
+    {
+      name: "ФБС-31",
+      query: "fbs31"
+    },
+    {
+      name: "ІПЗ-31",
+      query: "ipz31"
+    },
+    {
+      name: "КН-31",
+      query: "kn31"
+    }
   ]
 ]
