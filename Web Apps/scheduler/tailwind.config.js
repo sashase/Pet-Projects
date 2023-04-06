@@ -11,10 +11,10 @@ module.exports = {
         montserrat: "Montserrat"
       },
       colors: {
-        purple: "#5236D2",
-        whitePurple: "#F8F7FD",
-        grayPurple: "#EFEEF4",
-        blackPurple: "#0D0B0F" ,
+        green: "#40b32e",
+        whiteGreen: "#fafcfa",
+        grayGreen: "#f1f5f0",
+        blackGreen: "#0c0f0b" ,
         grey: "#8F8F8F",
         darkGray: "#303030",
         darkModeGray: "#1E1E1E"

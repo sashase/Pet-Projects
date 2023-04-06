@@ -110,7 +110,7 @@ const isFirstWeek = () => {
     const end = new Date(2023, date.end.month - 1, date.end.day)
     const today = new Date(2023, currentDate.monthNum, currentDate.day)
     const res = today > start && today < end
-    if (res == true) isFirstWeek = true
+    if (res === true) isFirstWeek = true
   })
   return isFirstWeek
 }

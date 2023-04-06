@@ -41,7 +41,7 @@ export default function Schedule() {
     if (isReady) getSchedule()
     setCurrentWeekDay(
       `${
-        query.weekDay == "saturday" || query.weekDay == "sunday"
+        query.weekDay === "saturday" || query.weekDay === "sunday"
           ? "monday"
           : query.weekDay
       }`
