@@ -29,14 +29,27 @@ const lessonTimes = [
   }
 ]
 
-const getCurrentLesson = (value, year) => {
-  let res
-  lessonTimes.forEach((lesson, key) => {
-    if (value >= lesson.start && value <= lesson.end) {
-      year === 1 ? (res = key) : (res = key - 1)
+const getTimeFromDate = (date, time) => {
+  const [hours, minutes] = time.split(":")
+  const timeDate = new Date(date)
+  timeDate.setHours(hours)
+  timeDate.setMinutes(minutes)
+  return timeDate
+}
+
+const getCurrentLesson = (time, year) => {
+  const date = new Date()
+  const timestamp = getTimeFromDate(date, time).getTime()
+  for (let i = 0; i < lessonTimes.length; i++) {
+    const range = lessonTimes[i]
+    const startTimestamp = getTimeFromDate(date, range.start).getTime()
+    const endTimestamp = getTimeFromDate(date, range.end).getTime()
+
+    if (timestamp >= startTimestamp && timestamp <= endTimestamp) {
+      if (year === "2" || year === "2r") return i - 1
+      return i
     }
-  })
-  return res
+  }
 }
 
 export default getCurrentLesson
