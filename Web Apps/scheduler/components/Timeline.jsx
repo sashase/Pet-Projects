@@ -6,14 +6,14 @@ export default function Timeline(props) {
     <div
       className={`items-center text-center text-lg leading-5 font-bold ${
         props.currentLesson === props.lessonNum &&
-        props.currentWeekDay === currentDate.weekDay.englishName
-          && "text-green animate-pulse"
+        props.currentWeekDay === currentDate.weekDay.englishName &&
+        "text-green animate-pulse"
       }`}>
       <p className="text-black dark:text-gray-300 w-14">
-        {timeOfLessons[props.year === "2r" ? 1 : props.year - 1][props.lessonNum].start}
+        {timeOfLessons[props.year === "2" || props.year === "2r" ? 1 : 0][props.lessonNum].start}
         <br />
         <span className="font-normal text-sm text-black dark:text-gray-300">
-          {timeOfLessons[props.year === "2r" ? 1 : props.year - 1][props.lessonNum].end}
+          {timeOfLessons[props.year === "2" || props.year === "2r" ? 1 : 0][props.lessonNum].end}
         </span>
       </p>
     </div>

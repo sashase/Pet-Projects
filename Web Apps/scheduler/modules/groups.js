@@ -114,5 +114,23 @@ export default [
       name: "КН-31",
       query: "kn31"
     }
+  ],
+  [
+    {
+      name: "КП-41",
+      query: "kp41"
+    },
+    {
+      name: "КП-42",
+      query: "kp42"
+    },
+    {
+      name: "ІПЗ-41",
+      query: "ipz41"
+    },
+    {
+      name: "КН-41",
+      query: "kn41"
+    }
   ]
 ]

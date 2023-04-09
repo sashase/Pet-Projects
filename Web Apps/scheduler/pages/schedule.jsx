@@ -39,13 +39,26 @@ export default function Schedule() {
 
   useEffect(() => {
     if (isReady) getSchedule()
-    setCurrentWeekDay(
-      `${
-        query.weekDay === "saturday" || query.weekDay === "sunday"
-          ? "monday"
-          : query.weekDay
-      }`
-    )
+    const getScheduleWeekDay = () => {
+      if (query.group !== "ipz41" && query.group !== "kn41") {
+        if (query.weekDay === "saturday" || query.weekDay === "sunday")
+          return "monday"
+        else return query.weekDay
+      }
+
+      if (query.group === "kn41" && query.weekDay !== "sunday") {
+        return query.weekDay
+      } else if (
+        query.group === "ipz41" &&
+        ((query.week === "2" && query.weekDay !== "sunday") ||
+          (query.week === "1" &&
+            query.weekDay !== "saturday" &&
+            query.weekDay !== "sunday"))
+      ) {
+        return query.weekDay
+      } else return "monday"
+    }
+    setCurrentWeekDay(getScheduleWeekDay())
   }, [query.weekDay, query.week])
 
   useEffect(() => {
@@ -60,6 +73,18 @@ export default function Schedule() {
       <div className="lg:mx-20 md:mx-10 mx-0">
         <div className="flex flex-wrap items-center gap-8 text-center text-2xl font-bold my-7">
           {weekDays.map((weekDay, key) => {
+            if (
+              weekDay.englishName === "saturday" &&
+              query.group !== "ipz41" &&
+              query.group !== "kn41"
+            )
+              return
+            else if (
+              weekDay.englishName === "saturday" &&
+              query.week === "1" &&
+              query.group === "ipz41"
+            )
+              return
             return (
               <DayButtons
                 key={key}

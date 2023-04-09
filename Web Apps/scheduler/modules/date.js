@@ -22,7 +22,8 @@ export let weekDays = [
   { shortName: "Вт", englishName: "tuesday" },
   { shortName: "Ср", englishName: "wednesday" },
   { shortName: "Чт", englishName: "thursday" },
-  { shortName: "Пт", englishName: "friday" }
+  { shortName: "Пт", englishName: "friday" },
+  { shortName: "Сб", englishName: "saturday" }
 ]
 
 switch (date.weekDay) {

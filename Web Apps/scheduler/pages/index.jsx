@@ -3,7 +3,7 @@ import groups from "../modules/groups"
 import GroupsList from "../components/GroupsList"
 
 export default function Home() {
-  const years = ["I курс", "II курс", "II курс дист.", "III курс"]
+  const years = ["I курс", "II курс", "II курс дист.", "III курс", "IV курс"]
   return (
     <div>
       <Head>
@@ -13,10 +13,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="max-w-xs lg:max-w-[80%] sm:max-w-md m-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 items-end lg:items-stretch gap-4 m-auto w-100 my-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 items-end lg:items-stretch gap-4 m-auto w-100 my-10">
           {years.map((year, key) => {
             return (
-              <GroupsList year={year} yearIndex={key} groups={groups[key]} />
+              <GroupsList
+                year={year}
+                yearIndex={key}
+                groups={groups[key]}
+                key={key}
+              />
             )
           })}
         </div>
