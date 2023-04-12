@@ -11,6 +11,7 @@ import getCurrentLesson from "../modules/getCurrentLesson.js"
 import Timeline from "../components/Timeline.jsx"
 import LibraryDay from "../components/LibraryDay.jsx"
 import Loading from "../components/Loading.jsx"
+import getScheduleWeekDay from "../modules/getScheduleWeekDay.js"
 
 export default function Schedule() {
   const [currentWeekDay, setCurrentWeekDay] = useState("")
@@ -39,26 +40,8 @@ export default function Schedule() {
 
   useEffect(() => {
     if (isReady) getSchedule()
-    const getScheduleWeekDay = () => {
-      if (query.group !== "ipz41" && query.group !== "kn41") {
-        if (query.weekDay === "saturday" || query.weekDay === "sunday")
-          return "monday"
-        else return query.weekDay
-      }
 
-      if (query.group === "kn41" && query.weekDay !== "sunday") {
-        return query.weekDay
-      } else if (
-        query.group === "ipz41" &&
-        ((query.week === "2" && query.weekDay !== "sunday") ||
-          (query.week === "1" &&
-            query.weekDay !== "saturday" &&
-            query.weekDay !== "sunday"))
-      ) {
-        return query.weekDay
-      } else return "monday"
-    }
-    setCurrentWeekDay(getScheduleWeekDay())
+    setCurrentWeekDay(getScheduleWeekDay(query))
   }, [query.weekDay, query.week])
 
   useEffect(() => {
